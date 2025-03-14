@@ -1,3 +1,14 @@
+<?php
+require_once("config/conn.php");
+if(isset($_POST['btnEnviar'])){
+    //var_dump($_POST);
+    require_once("models/Usuario.php");
+    $usuario = new Usuario();
+    $usuario->login();
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head lang="esp">
@@ -11,7 +22,7 @@
 	<link href="public/img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
 	<link href="public/img/favicon.png" rel="icon" type="image/png">
 	<link href="public/img/favicon.ico" rel="shortcut icon">
-<link rel="stylesheet" href="public/css/separate/pages/login.min.css">
+    <link rel="stylesheet" href="public/css/separate/pages/login.min.css">
     <link rel="stylesheet" href="public/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="public/css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/main.css">
@@ -20,31 +31,41 @@
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box">
+                <form class="sign-box" action="" method="POST" id="login_from">
                     <div class="sign-avatar">
                         <img src="public/img/avatar-sign.png" alt="">
                     </div>
-                    <header class="sign-title">Sign In</header>
+                    <header class="sign-title">Acceso:</header>
+                    <?php
+                        if(isset($_GET["m"])){
+                            switch($_GET["m"]){
+                                case "1"; ?>
+                                <div class="alert alert-danger alert-fill alert-close alert-dismissible fade in" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    El correo o la contraseña es incorrecta
+						        </div><?php
+                                break;
+                                case "2"; ?>
+                                <div class="alert alert-warning alert-icon alert-close alert-dismissible fade in" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+		        					<i class="font-icon font-icon-warning"></i>
+                                    El correo y contraseña son obligatorios
+					        	</div> <?php
+                            }
+                        }
+                    ?>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="E-Mail or Phone"/>
+                        <input type="text" id="emailLogin" name="emailLogin" class="form-control" placeholder="Ingresa tu correo"/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password"/>
+                        <input type="password" id="passLogin" name="passLogin" class="form-control" placeholder="Ingresa tu password:"/>
                     </div>
-                    <div class="form-group">
-                        <div class="checkbox float-left">
-                            <input type="checkbox" id="signed-in"/>
-                            <label for="signed-in">Keep me signed in</label>
-                        </div>
-                        <div class="float-right reset">
-                            <a href="reset-password.html">Reset Password</a>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-rounded">Sign in</button>
-                    <p class="sign-note">New to our website? <a href="sign-up.html">Sign up</a></p>
-                    <!--<button type="button" class="close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>-->
+                    <input type="hidden" name="enviar" value="si">
+                    <button type="submit" class="btn btn-rounded" id="btnEnviar" name="btnEnviar">Login</button>
                 </form>
             </div>
         </div>
@@ -53,7 +74,7 @@
 <script src="public/js/lib/tether/tether.min.js"></script>
 <script src="public/js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="public/js/plugins.js"></script>
-    <script type="text/javascript" src="js/lib/match-height/jquery.matchHeight.min.js"></script>
+    <script type="text/javascript" src="public/js/lib/match-height/jquery.matchHeight.min.js"></script>
     <script>
         $(function() {
             $('.page-center').matchHeight({
