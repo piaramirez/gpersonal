@@ -17,7 +17,7 @@ class conn {
             die("Error en la conexión: " . $e->getMessage());
         }
     }
-    public function ruta(){
+    public static function ruta(){
         return "http://localhost/ticket/";
     }
 }
