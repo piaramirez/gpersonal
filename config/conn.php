@@ -22,5 +22,9 @@ class conn {
     public static function ruta(){
         return "http://localhost/ticket/";
     }
+    public static function usuarioAutenticado() {
+        return isset($_SESSION['usuario']) ? $_SESSION['usuario'] : null;
+    }
+    
 }
 ?>

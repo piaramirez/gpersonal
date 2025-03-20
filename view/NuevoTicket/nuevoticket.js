@@ -1,0 +1,1 @@
+alert("área de ticket")

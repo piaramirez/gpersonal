@@ -1,8 +1,11 @@
 <?php
-
 class Usuario extends conn{
+    private $nombre;
+    private $apellidos;
+    private $foto;
     public function __construct(){
         parent::__construct();
+        //var_dump("Dentro de usuarios");
     }
     public function login(){
         //recuerda La clase Usuario hereda de conn, pero en el constructor no llamas al constructor de la clase padre.
@@ -18,14 +21,19 @@ class Usuario extends conn{
                 header("Location:".conn::ruta()."index.php?m=2");
                 exit();
            }else{
-            print($emailLogin." ".$passLogin);
-            $pdo = $this->db->prepare("SELECT * FROM mt_usuarios WHERE mtUsuarioEmail = :emailLogin AND mtUsuarioPass = :passLogin");
+           // print($emailLogin." ".$passLogin);
+            $pdo = $this->db->prepare("SELECT u.mtUsuarioID, u.mtUsuarioNombre, u.mtUsuarioApellido, u.mtUsuarioEmail, u.mtUsuarioImg, u.mtUsuarioTipo, r.mtRolesNombre AS rol 
+FROM mt_usuarios u
+LEFT JOIN mtroles r ON u.mtUsuarioTipo = r.mtRolesId
+WHERE u.mtUsuarioEmail =:emailLogin AND u.mtUsuarioPass = :passLogin  LIMIT 1");
             $pdo->bindParam(':emailLogin', $emailLogin);
             $pdo->bindParam(':passLogin', $passLogin);
             $pdo->execute();
             $usuario = $pdo->fetch(PDO::FETCH_ASSOC);
             if ($usuario) {
-                $_SESSION['usuario'] = $usuario; // Guardar usuario en sesión
+                $this->setDatos($usuario);
+                //var_dump($this->$usuario);
+                $_SESSION['usuario'] = $usuario; 
                 header("Location: " . conn::ruta() . "view/Home/index.php");
                 exit();
             } else {
@@ -35,5 +43,18 @@ class Usuario extends conn{
 
         }
         }
+    }
+    public function setDatos($usuario){
+        $this->nombre=$usuario['mtUsuarioNombre'];
+        $this->apellidos=$usuario['mtUsuarioApellido'];
+    }
+    public function getNombre() {
+        return $this->nombre;
+    }
+    public function getApellidos(){
+        return $this->apellidos;
+    }
+    public function nombreCompleto(){
+        return $this->nombre." ".$this->apellidos;
     }
 }
