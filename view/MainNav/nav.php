@@ -18,5 +18,15 @@
                     <span class="lbl">Consultar Ticket</span>
                 </a>
 	        </li>
+            <li class="blue-dirty with-sub">
+	            <span>
+	                <i class="font-icon font-icon-edit"></i>
+	                <span class="lbl">Usuarios</span>
+	            </span>
+	            <ul>
+	                <li><a href="..\ConsultarUsuarios"><span class="lbl">Consultar</span></a></li>
+	                <li><a href="ui-form-extras.html"><span class="lbl">Registrar</span></a></li>
+	            </ul>
+	        </li>
 	    </ul>
 	</nav>

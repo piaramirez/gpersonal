@@ -8,7 +8,6 @@ if(isset($_POST['btnEnviar'])){
 }
 
 ?>
-
 <!DOCTYPE html>
 <html>
 <head lang="esp">

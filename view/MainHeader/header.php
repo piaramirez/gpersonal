@@ -1,6 +1,6 @@
 <header class="site-header">
 	<div class="container-fluid">
-	    <a href="#" class="site-logo">
+	    <a href="..\Home\" class="site-logo">
 	        <img class="hidden-md-down" src="<?php $help->publicUrl(); ?>img/logoMacro.png" alt="">
 	        <img class="hidden-lg-up" src="<?php $help->publicUrl(); ?>img/logoMacro.png" alt="">
 	    </a>
@@ -90,10 +90,15 @@
 						<!-- Perfil -->
 	                    <div class="dropdown user-menu">
 	                        <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            <img src="<?php $help->publicURL(); ?>img/avatar-2-64.png" alt="">
+	                            <?php if($usuarios->getFoto()){ ?>
+										<img src="<?php $help->publicURL(); ?>img/<?php echo $usuarios->getFoto(); ?>" alt="">
+									<?php }else{ ?>
+										<img src="<?php $help->publicURL(); ?>img/avatar-2-64.png" alt="">
+									<?php } ?>
+								
 	                        </button>
 	                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
-	                            <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-user"></span>Perfil</a>
+	                            <a class="dropdown-item" href="..\Perfil\"><span class="font-icon glyphicon glyphicon-user"></span>Perfil</a>
 	                            <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-cog"></span>Configuraciones</a>
 	                            <div class="dropdown-divider"></div>
 	                            <a class="dropdown-item" href="../Logout/logout.php"><span class="font-icon glyphicon glyphicon-log-out"></span>Cerrar Sesión</a>

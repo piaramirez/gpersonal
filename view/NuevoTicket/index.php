@@ -6,6 +6,7 @@
         header("Location: " . conn::ruta() . "index.php");
         exit();
     }else{ ?>
+<!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php"); ?>
     <title>Nuevo Ticket | Soporte Técnico</title>

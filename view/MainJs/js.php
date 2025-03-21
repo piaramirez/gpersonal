@@ -3,3 +3,7 @@
 <script src="<?php $help->publicUrl(); ?>js/lib/bootstrap/bootstrap.min.js"></script>
 <script src="<?php $help->publicUrl(); ?>js/plugins.js"></script>
 <script src="<?php $help->publicUrl(); ?>js/app.js"></script>
+<script src="<?php $help->publicUrl(); ?>js/plugins.js"></script>
+<script src="<?php $help->publicUrl(); ?>js/lib/salvattore/salvattore.min.js"></script>
+<script src="<?php $help->publicUrl(); ?>js/lib/ion-range-slider/ion.rangeSlider.js"></script>
+<script src="<?php $help->publicUrl(); ?>js/lib/fancybox/jquery.fancybox.pack.js"></script>

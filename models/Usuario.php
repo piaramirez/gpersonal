@@ -3,6 +3,8 @@ class Usuario extends conn{
     private $nombre;
     private $apellidos;
     private $foto;
+    private $puesto;
+    private $email;
     public function __construct(){
         parent::__construct();
         //var_dump("Dentro de usuarios");
@@ -23,16 +25,17 @@ class Usuario extends conn{
            }else{
            // print($emailLogin." ".$passLogin);
             $pdo = $this->db->prepare("SELECT u.mtUsuarioID, u.mtUsuarioNombre, u.mtUsuarioApellido, u.mtUsuarioEmail, u.mtUsuarioImg, u.mtUsuarioTipo, r.mtRolesNombre AS rol 
-FROM mt_usuarios u
-LEFT JOIN mtroles r ON u.mtUsuarioTipo = r.mtRolesId
-WHERE u.mtUsuarioEmail =:emailLogin AND u.mtUsuarioPass = :passLogin  LIMIT 1");
+            FROM mt_usuarios u
+            LEFT JOIN mtroles r ON u.mtUsuarioTipo = r.mtRolesId
+            WHERE u.mtUsuarioEmail =:emailLogin AND u.mtUsuarioPass = :passLogin  LIMIT 1");
             $pdo->bindParam(':emailLogin', $emailLogin);
             $pdo->bindParam(':passLogin', $passLogin);
             $pdo->execute();
             $usuario = $pdo->fetch(PDO::FETCH_ASSOC);
             if ($usuario) {
                 $this->setDatos($usuario);
-                //var_dump($this->$usuario);
+                var_dump($usuario);
+                //die();
                 $_SESSION['usuario'] = $usuario; 
                 header("Location: " . conn::ruta() . "view/Home/index.php");
                 exit();
@@ -47,6 +50,9 @@ WHERE u.mtUsuarioEmail =:emailLogin AND u.mtUsuarioPass = :passLogin  LIMIT 1");
     public function setDatos($usuario){
         $this->nombre=$usuario['mtUsuarioNombre'];
         $this->apellidos=$usuario['mtUsuarioApellido'];
+        $this->foto=$usuario['mtUsuarioImg'];
+        $this->puesto=$usuario['rol'];
+        $this->email=$usuario['mtUsuarioEmail'];
     }
     public function getNombre() {
         return $this->nombre;
@@ -56,5 +62,14 @@ WHERE u.mtUsuarioEmail =:emailLogin AND u.mtUsuarioPass = :passLogin  LIMIT 1");
     }
     public function nombreCompleto(){
         return $this->nombre." ".$this->apellidos;
+    }
+    public function getFoto(){
+        return $this->foto;
+    }
+    public function getPuesto(){
+       return $this->puesto;
+    }
+    function getEmail(){
+        return $this->email;
     }
 }

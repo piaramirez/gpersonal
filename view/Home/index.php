@@ -9,6 +9,7 @@
         $help = new helpers();
         $usuarios = new Usuario(); 
         $usuarios->setDatos($_SESSION['usuario']); ?>
+<!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php"); ?>
     <title>Inicio | Soporte Técnico</title>
