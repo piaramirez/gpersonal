@@ -25,7 +25,7 @@
 	            </span>
 	            <ul>
 	                <li><a href="..\ConsultarUsuarios"><span class="lbl">Consultar</span></a></li>
-	                <li><a href="ui-form-extras.html"><span class="lbl">Registrar</span></a></li>
+	                <li><a href="..\RegistrarUsuario"><span class="lbl">Registrar</span></a></li>
 	            </ul>
 	        </li>
 	    </ul>

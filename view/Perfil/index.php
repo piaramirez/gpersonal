@@ -85,19 +85,15 @@
 								</p>
 								<p class="line-with-icon">
 									<i class="font-icon font-icon-case-3"></i>
-									Symfony, PHP, JavaScript, Java, Android, SQL, OOP, OOD
+									<?php echo $usuarios->getPuesto(); ?>
 								</p>
 								<p class="line-with-icon">
 									<i class="font-icon font-icon-learn"></i>
-									VSU, Compiter Science, Master
-								</p>
-								<p class="line-with-icon">
-									<i class="font-icon font-icon-github"></i>
-									<a href="#">Nickname</a>
+									Facultad de Estudios Superiores Aragón.
 								</p>
 								<p class="line-with-icon">
 									<i class="font-icon font-icon-earth"></i>
-									<a href="#">example.com</a>
+									<a href="https://www.linkedin.com/in/pedro-antonio-ram%C3%ADrez-alc%C3%A1ntara-903960b7/">Linkedin</a>
 								</p>
 								<p class="line-with-icon">
 									<i class="font-icon font-icon-calend"></i>
@@ -139,7 +135,7 @@
 								</div>
 							</div>
 						</section>
-					</aside><!--.profile-side-->
+					</aside>
 				</div>
 
 				<div class="col-xl-9 col-lg-8">
@@ -148,19 +144,10 @@
 							<ul class="nav" role="tablist">
 								<li class="nav-item">
 									<a class="nav-link active" href="#tabs-2-tab-1" role="tab" data-toggle="tab">
-										<span class="nav-link-in">About me</span>
+										<span class="nav-link-in">Línea del tiempo:</span>
 									</a>
 								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#tabs-2-tab-2" role="tab" data-toggle="tab">
-										<span class="nav-link-in">Activity</span>
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#tabs-2-tab-3" role="tab" data-toggle="tab">
-										<span class="nav-link-in">Projects</span>
-									</a>
-								</li>
+
 								<li class="nav-item">
 									<a class="nav-link" href="#tabs-2-tab-4" role="tab" data-toggle="tab">
 										<span class="nav-link-in">Settings</span>
