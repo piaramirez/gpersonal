@@ -25,6 +25,7 @@
                 <h3>Dar de alta al usuario o cliente</h3> <!-- Podríamos ver de anmimar la entrada -->
                 <div class="">
                 <div class="row">
+                    <!-- Form niver privilegio usuario -->
 					<div class="col-lg-4">
 						<fieldset class="form-group">
 							<label class="form-label semibold" for="tipoUsuario">Rol de usuario:</label>
@@ -36,56 +37,80 @@
                             </select>
 						</fieldset>
 					</div>
-                    <div class="col-lg-4">
-						<fieldset class="form-group">
-							<label class="form-label semibold" for="nombresRegistrp">Nombre(s)</label>
-							<input type="text" class="form-control" id="exampleInput" placeholder="Ingresa el nombre">
-						</fieldset>
-					</div>
-                    <div class="col-lg-4">
-						<fieldset class="form-group">
-							<label class="form-label semibold" for="nombresRegistrp">Apellido Paterno</label>
-							<input type="text" class="form-control" id="exampleInput" placeholder="Ingresa el nombre">
-						</fieldset>
-					</div>
-                    <div class="col-lg-4">
-						<fieldset class="form-group">
-							<label class="form-label semibold" for="nombresRegistrp">Apellido Materno</label>
-							<input type="text" class="form-control" id="exampleInput" placeholder="Ingresa el nombre">
-						</fieldset>
-					</div>
-					<div class="col-lg-4">
-						<fieldset class="form-group">
-							<label class="form-label" for="exampleInputEmail1">Email address</label>
-							<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="mail@mail.com">
-						</fieldset>
-					</div>
-					<div class="col-lg-4">
-						<fieldset class="form-group">
-							<label class="form-label" for="exampleInputPassword1">Password</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-						</fieldset>
-					</div>
-				</div>
+                    </div>
+                    <!-- Información general -->
+                   <div class="row">      
+                        <h4>Infomración del usuario</h4>
+                        <!-- Form nombre -->
+                        
+                        <div class="col-lg-4">
+                        <div id="erronombre"></div>
+                            <fieldset class="form-group">
+                                <label class="form-label semibold" for="nombresRegistro">Nombre(s)</label>
+                                <input type="text" class="form-control" id="nombreRegistro" name="nombreRegistro" placeholder="Ingresa el nombre" required>
+                                
+                            </fieldset>
+                        </div>
+                        <!-- Form apellidos -->
+                        
+                        <div class="col-lg-4">
+                        
+                            <fieldset class="form-group">
+                                <label class="form-label semibold" for="apellidopaRegistro">Apellido Paterno</label>
+                                <input type="text" class="form-control" id="apellidopaRegistro" name="apellidopaRegistro" placeholder="Ingresa apellido paterno" required>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-4">
+                            <fieldset class="form-group">
+                                <label class="form-label semibold" for="apellidomaRegistro">Apellido Materno</label>
+                                <input type="text" class="form-control" id="apellidomaRegistro" name="apellidomaRegistro" placeholder="Ingresa el apellido materno" required>
+                            </fieldset>
+                        </div>
+                        <!-- Form whats -->
+                        <div class="col-lg-4">
+                            <fieldset class="form-group">
+                                <label class="form-label semibold" for="whatsRegistro">Teléfono contacto:</label>
+                                <input type="tel" class="form-control" id="whatsRegistro" name="whatsRegistro" placeholder="Whatsapp preferente">
+                            </fieldset>
+                        </div>
+                        <!-- Form Email -->
+                        <div class="col-lg-4">
+                            <fieldset class="form-group ">
+                                <label class="form-label semibold" for="emailRegistro">Correo electrónico</label>
+                                <input type="email" class="form-control" id="emailRegistro" name="emailRegistro" placeholder="Ingresa el correo"  required>
+                            </fieldset>
+                        </div>
+                        <!-- Empresa donde damos soporte -->
+                        <div class="col-lg-4">
+                            <fieldset class="form-group ">
+                                <label class="form-label semibold" for="empresaRegistro">Empresa</label>
+                                <input type="text" class="form-control" id="empresaRegistro" name="empresaRegistro" placeholder="Empresa soporte"  required>
+                            </fieldset>
+                        </div>
+                        <!-- Form Pass -->
+                        <div class="col-lg-4">
+                            <fieldset class="form-group">
+                                <label class="form-label semibold" for="passRegistro">Password</label>
+                                <input type="password" class="form-control" id="passRegistro" name="passRegistro" placeholder="Password">
+                            </fieldset>
+                        </div>
+                        <!-- Enviar -->
+                        <div class="col-lg-4 form-group">
+ 
+                                <button type="button"  id="enviarRegistro" name="enviarRegistro" class="btn btn-rounded btn-inline">Enviar</button>
+                        
+                        </div>
+                        
+                   </div>
+                    <!-- cierre Información general -->
                 </div>
-                Tipo{
-                    trabajador
-                    usuario
-                }
-                nombreCompleto
-                empresa
-                correo
-                pass
-                teléfono
-                <!-- En bd fecha de alta
-                fecha de baja-->
             </div>
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
     <!-- Contenido -->
     <?php include_once("../MainJs/js.php"); ?>
-    <script src="home.js"></script>
-
+    <script type="module" src="RegistrarUsuarios.js"></script>
+    
 </body>
 </html>
 <?php } ?>
