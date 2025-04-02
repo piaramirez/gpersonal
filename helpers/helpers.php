@@ -4,7 +4,7 @@
         
         }
         public function publicUrl(){
-            echo "http://localhost/ticket/public/";
+            echo "http://localhost/gpersonal/public/";
         }
     }
 

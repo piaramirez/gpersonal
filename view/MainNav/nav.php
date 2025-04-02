@@ -28,5 +28,39 @@
 	                <li><a href="..\RegistrarUsuario"><span class="lbl">Registrar</span></a></li>
 	            </ul>
 	        </li>
+			<li class="blue-dirty with-sub">
+	            <span>
+	                <i class="font-icon font-icon-edit"></i>
+	                <span class="lbl">Contabilidad</span>
+	            </span>
+	            <ul>
+	                <li><a href="..\"><span class="lbl">Cotización</span></a></li>
+	                <li><a href="..\RegistrarUsuario"><span class="lbl">Pagos</span></a></li>
+					<li><a href="..\RegistrarUsuario"><span class="lbl">Finanzas</span></a></li>
+	            </ul>
+	        </li>
+			<li class="blue-dirty with-sub">
+	            <span>
+	                <i class="font-icon font-icon-edit"></i>
+	                <span class="lbl">Escuela</span>
+	            </span>
+	            <ul>
+	                <li><a href="..\"><span class="lbl">Cotización</span></a></li>
+	                <li><a href="..\RegistrarUsuario"><span class="lbl">Pagos</span></a></li>
+					<li><a href="..\RegistrarUsuario"><span class="lbl">Finanzas</span></a></li>
+	            </ul>
+	        </li>
+			<li class="blue-dirty with-sub">
+	            <span>
+	                <i class="font-icon font-icon-edit"></i>
+	                <span class="lbl">Proyectos</span>
+	            </span>
+	            <ul>
+	                <li><a href="..\"><span class="lbl">Cotización</span></a></li>
+	                <li><a href="..\RegistrarUsuario"><span class="lbl">Pagos</span></a></li>
+					<li><a href="..\RegistrarUsuario"><span class="lbl">Finanzas</span></a></li>
+	            </ul>
+	        </li>
+			
 	    </ul>
 	</nav>

@@ -21,7 +21,14 @@
     <!-- Contenido -->
 	<div class="page-content">
 		<div class="container-fluid">
-            <?php echo $usuarios->nombreCompleto(); ?>
+
+            <div class="paneles">
+                Tareas pendientes
+                Gastos a cubrir
+                //si es admin tendría que rtener un panel para ver los sprint suponiendo que quieren llevar un proyecto
+                
+
+            </div>
 		</div><!--.container-fluid-->
 	</div><!--.page-content-->
     <!-- Contenido -->
